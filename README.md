@@ -17,7 +17,7 @@ $ python setup.py install
 - Got to "My Account", then Click on "User Configuration", to obtain "Webservices token".
 
 ## Sending default message
-- test file [test_api.py](https://github.com/DonnC/BulkSmsZW-Api/test_api.py)
+- test file [test_api.py](https://github.com/DonnC/BulkSmsZW-Api/blob/master/test_api.py)
 - recipients is passed as a list of bulksms valid format ```2637xxxxxxxx```, list can also contain groups ```#devteam``` and can be mixed
 
 ```python
