@@ -6,21 +6,13 @@ import logging
 
 class Client:
     """
-        - client to connect to bulksms and send a message
-        - by default a general text message is send
-        - to retrieve credits, the flag "credits" is set to true. False by default
-        - recipients to send message to is passed in as a list of numbers/groups or mixed
-        - messages can be scheduled with bulksms supported datetime format: YYYY-MM-DD hh:mm:ss
+        client to connect to bulksms zw services and send a text message
     """
 
     BULKSMS_WEBSERVICE_URL = "http://portal.bulksmsweb.com/index.php?app=ws"
     SEND_SMS_OPERATION     = "pv"
     SMS_CREDIT_OPERATION   = "cr"
-   
-    __name__    = "BulkSmsZW API"
-    __author__  = "Donald C"
-    __version__ = 1.0
-
+    
     def __init__(self, username=None, token=None):
         self.username = username
         self.token    = token
@@ -75,6 +67,11 @@ class Client:
         else:
             raise Exception("Recipients should be passed as a list")
 
+    def api_errors(self, error_response):
+        # handle bulksmszw api error
+        if not error_response.get("error_string"):
+            return True
+
     def send_request(self, text, to, operation):
         payload = dict()
         payload["to"] = to
@@ -85,6 +82,9 @@ class Client:
         try:
             req.raise_for_status()
             response = req.json()
+            if self.api_errors(error_response=response):
+                raise Exception(response)
+            
             return response
 
         except Exception as error:
@@ -93,7 +93,6 @@ class Client:
 
     def send(self, body, recipients, credits=False, schedule=None):
         #TODO: Handle scheduling text message: YYYY-MM-DD hh:mm:ss
-        #TODO: Retrieve user credits
 
         recipients = self.recipients(recipients_list=recipients)
         
