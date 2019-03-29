@@ -10,7 +10,7 @@ bulksmszw api for sending text messages
 - recipients is passed as a list of bulksms valid format ```2637xxxxxxxx```, list can also contain groups ```#devteam``` and can be mixed
 ```python
 api = Client(<username>, <token>)
-api.send("hello guys", ['2637xxxxxxxx', '#devteam', '#students']
+api.send("hello guys", ['2637xxxxxxxx', '#devteam', '#students'])
 ```
 - Example script below
 ```python
@@ -32,6 +32,11 @@ except Exception as exc:
 ## Send message and get credits left
 - ```credits``` flag by default is set to ```False```
 - to send a message and receive the number of credits left on your web portal, set the ```credit=True``` flag
+```python
+api = Client(<username>, <token>)
+credits_response = api.send(body="hello world", recipients=['2637xxxxxxxx'], credits=True)
+print(credits_response)
+```
 
 ## Responses
 - responses are in default **JSON** format used by BulkSMSZW service
