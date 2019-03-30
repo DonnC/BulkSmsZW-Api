@@ -1,7 +1,9 @@
 # testing the api
 
 from BulkSmsApi import Client
-from credentials import BULKSMS_NAME, BULKSMSWEB_KEY
+
+BULKSMS_NAME   = "<your-username>"
+BULKSMSWEB_KEY = "<webservice-token>"
 
 # provide credentials here
 bulksms = Client(username=BULKSMS_NAME, token=BULKSMSWEB_KEY)
