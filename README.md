@@ -11,6 +11,13 @@ $ cd BulkSmsZW-Api
 $ python setup.py install
 ```
 
+- or directly with pip 
+```bash
+$ pip3 install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
+$ python3
+$ from BulkSmsApi import Client
+```
+
 ## Authentication details
 - register an account on [bulksms website](http://www.bulksmsweb.com/)
 - if already have an account, login on [bulksms web portal](http://portal.bulksmsweb.com)
