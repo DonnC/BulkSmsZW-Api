@@ -11,11 +11,9 @@ $ cd BulkSmsZW-Api
 $ python setup.py install
 ```
 
-- or directly with pip 
+- or directly with pip, ```python3.x``` 
 ```bash
-$ pip3 install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
-$ python3
-$ from BulkSmsApi import Client
+$ pip install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
 ```
 
 ## Authentication details
