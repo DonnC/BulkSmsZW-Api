@@ -70,3 +70,5 @@ print(credits_response)
 
 ## dev
 - [twitter](https://twitter.com/@donix_22)
+- [email](donychinhuru@gmail.com)
+- [whatsapp](https://wa.me/263778060126?text=BulkSMSZW-Api%20%0AGitHub:%0Ahttps://github.com/DonnC/BulkSmsZW-Api)
