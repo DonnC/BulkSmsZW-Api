@@ -69,7 +69,7 @@ class Client:
 
     def __api_errors(self, error_response):
         # handle bulksmszw api error
-        if error_response.get("error_string") == "None":
+        if error_response.get("error_string") == None:
             return False
         elif len(error_response.get("error_string")) > 5:
             return True
