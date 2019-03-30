@@ -1,4 +1,4 @@
 from BulkSmsApi.Client import Client
 
-name    = "BulkSmsApi"
-version = "1.1.0"
+name        = "BulkSmsApi"
+__version__ = "1.1.0"
