@@ -1,8 +1,4 @@
+# ignore media files
 Docs/*.png
 Docs/*.gif
 Docs/*.jpg
-
-# fastlane
-fastlane/Docs/*.png
-fastlane/Docs/*.gif
-fastlane/Docs/*.jpg
