@@ -1,4 +1,5 @@
 # ignore media files
+Docs
 Docs/*.png
 Docs/*.gif
 Docs/*.jpg
