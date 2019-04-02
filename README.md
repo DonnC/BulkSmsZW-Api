@@ -48,6 +48,7 @@ try:
 except Exception as exc:
     print("Encountered an Error: %s" %exc)
 ```
+![test run gif](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/test_run.gif)
 
 ## Send message and get credits(text messages) left
 - ```credits``` flag by default is set to ```False```
