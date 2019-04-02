@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="bulksms-donald",
-    version="1.1.0",
+    version="1.2.0",
     author="Donald Chinhuru",
     author_email="donychinhuru@gmail.com",
     description="send text messages with bulksmszw api",
