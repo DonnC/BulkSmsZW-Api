@@ -15,6 +15,7 @@ $ python setup.py install
 ```bash
 $ pip install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
 ```
+![demo gif](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/pip_install_only.gif)
 
 ## Authentication details
 - register an account on [bulksms website](http://www.bulksmsweb.com/)
