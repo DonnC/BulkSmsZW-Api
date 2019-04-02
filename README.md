@@ -33,7 +33,7 @@ $ pip install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
 - Example script
 
 ```python
-from BulkSmsApi import Client
+from BulkSmsApi.Client import Client
 
 BULKSMS_NAME   = "your-username"
 BULKSMSWEB_KEY = "your-web-token"
