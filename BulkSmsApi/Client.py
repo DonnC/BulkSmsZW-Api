@@ -76,7 +76,7 @@ class Client:
         # handle bulksmszw api error
 
         if error_response.get("status") == self.__STATUS_ERROR:
-            # if status is in root node, and is has value 'ERR', there have been an exception
+            # if status is in root node, and has value 'ERR', there have been an exception
             return True
 
         elif error_response.get("data"):
@@ -86,7 +86,7 @@ class Client:
     def send_request(self, text, to, operation):
         '''
             parse and quote phone numbers and the message body
-            handles http post request to send text message use BulkSmsZw gateway
+            handles http post request to send text message using BulkSmsZw gateway
             BulkSmsZw status error codes are catched as Exceptions
         '''
         url = Parse(operation, text, to).url()
