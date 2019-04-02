@@ -36,18 +36,15 @@ $ pip install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
 ```python
 from BulkSmsApi.Client import Client
 
-BULKSMS_NAME   = "your-username"
-BULKSMSWEB_KEY = "your-web-token"
+bulksms = Client(<username>, <web-token>)
 
-bulksms = Client(username=BULKSMS_NAME, token=BULKSMSWEB_KEY)
+response = bulksms.send(body="bulk sms ZW api testing", recipients=['2637xxxxxxxx', '2637yyyyyyyy'])
 
-try:
-    response = bulksms.send(body="bulk sms ZW api testing", recipients=['2637xxxxxxxx', '2637yyyyyyyy'])
-    print(response)
-
-except Exception as exc:
-    print("Encountered an Error: %s" %exc)
+print(response)
 ```
+- On successful run, the response
+![default message respond](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/success.jpg)
+
 ![test run gif](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/test_run.gif)
 
 ## Send message and get credits(text messages) left
@@ -56,9 +53,28 @@ except Exception as exc:
 
 ```python
 api = Client(<username>, <token>)
+
 credits_response = api.send(body="hello world", recipients=['2637xxxxxxxx'], credits=True)
+
 print(credits_response)
 ```
+![credits response](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/credits.jpg)
+
+## Catch BulkSmsZw status errors as python exceptions
+- You can wrap your code in a ```try - except``` to catch unsuccessful and bulksms error messages as normal python exceptions
+```python
+# this wil throw an exception because of the wrong / not valid username
+
+bulksms = Client(username=<wrong-username>, token=<web-token>)
+
+try:
+    response = bulksms.send(body="bulk sms ZW api testing", recipients=['2637xxxxxxxx', '2637yyyyyyyy'])
+    print(response)
+
+except Exception as exc:
+    print("Encountered an Error: %s" %exc)
+```
+![bulksms exception](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/test_error_do.jpg)
 
 ## Responses
 - responses are in default **JSON** format used by BulkSMSZW service
