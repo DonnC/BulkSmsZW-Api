@@ -15,7 +15,7 @@ $ python setup.py install
 ```bash
 $ pip install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
 ```
-![demo gif](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/pip_install_only.gif)
+![demo gif](Docs/pip_install_only.gif)
 
 ## Authentication details
 - register an account on [bulksms website](http://www.bulksmsweb.com/)
@@ -23,7 +23,7 @@ $ pip install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
 - Got to "My Account", then Click on "User Configuration", to obtain "Webservices token".
 
 ## Sending default message
-- test file [test_api.py](https://github.com/DonnC/BulkSmsZW-Api/blob/master/test_api.py)
+- test file [test_api.py](test_api.py)
 - recipients is passed as a list of bulksms valid format ```2637xxxxxxxx```, list can also contain groups ```#devteam``` and can be mixed
 
 ```python
@@ -43,9 +43,9 @@ response = bulksms.send(body="bulk sms ZW api testing", recipients=['2637xxxxxxx
 print(response)
 ```
 - On successful run, the response
-![default message respond](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/success.jpg)
+![default message respond](Docs/success.jpg)
 
-![test run gif](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/test_run.gif)
+![test run gif](Docs/test_run.gif)
 
 ## Send message and get credits(text messages) left
 - ```credits``` flag by default is set to ```False```
@@ -58,7 +58,7 @@ credits_response = api.send(body="hello world", recipients=['2637xxxxxxxx'], cre
 
 print(credits_response)
 ```
-![credits response](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/credits.jpg)
+![credits response](Docs/credits.jpg)
 
 ## Catch BulkSmsZw status errors as python exceptions
 - You can wrap your code in a ```try - except``` to catch unsuccessful and bulksms error messages as normal python exceptions
@@ -74,7 +74,7 @@ try:
 except Exception as exc:
     print("Encountered an Error: %s" %exc)
 ```
-![bulksms exception](https://github.com/DonnC/BulkSmsZW-Api/blob/master/Docs/test_error_do.jpg)
+![bulksms exception](Docs/test_error_do.jpg)
 
 ## Responses
 - responses are in default **JSON** format used by BulkSMSZW service
