@@ -100,6 +100,9 @@ class Client:
 
         recipients = self.recipients(recipients_list=recipients)
         
+        # add newline for Default sender ID footer 
+        body       = body + "\n"
+        
         if credits:
             resp = self.send_request(text=body, to=recipients, operation=self.__credit())
             
