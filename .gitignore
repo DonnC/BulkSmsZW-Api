@@ -1,0 +1,6 @@
+Docs/*.png
+Docs/*.gif
+
+# fastlane
+fastlane/Docs/*.png
+fastlane/Docs/*.gif
