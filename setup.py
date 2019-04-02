@@ -12,8 +12,10 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/DonnC/BulkSms-ZW",
+    licence="MIT",
     packages=setuptools.find_packages(),
     classifiers=[
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent"
     ],
