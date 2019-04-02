@@ -50,7 +50,7 @@ except Exception as exc:
 
 ## Send message and get credits(text messages) left
 - ```credits``` flag by default is set to ```False```
-- to send a message and receive the number of credits left on your web portal, set the ```credit``` flag to ```True```
+- to receive the number of credits on your web portal, set the ```credit``` flag to ```True```
 
 ```python
 api = Client(<username>, <token>)
