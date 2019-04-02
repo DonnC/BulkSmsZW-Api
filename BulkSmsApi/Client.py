@@ -7,7 +7,7 @@ from BulkSmsApi.Parse import Parse
 
 class Client:
     """
-        client to connect to bulksms zw services and send a text message
+        client to connect to bulksms zw gateway and send a text message
     """
 
     __BULKSMS_WEBSERVICE_URL = "http://portal.bulksmsweb.com/index.php?app=ws"
@@ -52,7 +52,10 @@ class Client:
 
 
     def recipients(self, recipients_list):
-        # receive recipient as lists
+        '''
+            receive phone numbers as a list
+            list is parsed and recipients numbers are extracted. Returns a string of phone numbers
+        '''
         # TODO: Validate phone number format
 
         recipients = ""
@@ -81,6 +84,11 @@ class Client:
             return False
 
     def send_request(self, text, to, operation):
+        '''
+            parse and quote phone numbers and the message body
+            handles http post request to send text message use BulkSmsZw gateway
+            BulkSmsZw status error codes are catched as Exceptions
+        '''
         url = Parse(operation, text, to).url()
 
         req = requests.post(url)
@@ -96,12 +104,17 @@ class Client:
         return response
 
     def send(self, body, recipients, credits=False, schedule=None):
+        '''
+            send message to recipients, phone_numbers are passed as a list of numbers or groups or mixed
+            >>> send(body="Hello World", body=['#developer', '263778060126'])
+            'credits' flag is set to True in order to return text messages left. Is set to False by default
+            >>> send(body="Hello World", body=['#developer', '263778060126'], credits=True)
+            on successful, it returns json body. If 'credits' is set to True, returns the credits value
+        '''
         #TODO: Handle scheduling text message: YYYY-MM-DD hh:mm:ss
 
-        recipients = self.recipients(recipients_list=recipients)
-        
-        # add newline for Default sender ID footer 
-        body       = body + "\n"
+        recipients = self.recipients(recipients_list=recipients) 
+        body       = body + "\n"                                                                    # for default sender ID
         
         if credits:
             resp = self.send_request(text=body, to=recipients, operation=self.__credit())
