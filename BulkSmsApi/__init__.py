@@ -1,4 +1,6 @@
-from BulkSmsApi.Client import Client
+from BulkSmsApi import Client
+from BulkSmsApi import Parse
 
-name        = "BulkSmsApi"
-__version__ = "1.1.0"
+__name__    = "BulkSmsApi"
+__version__ = "1.2.0"
+__author__  = "Donald Chinhuru"

@@ -3,6 +3,7 @@
 
 import requests
 import logging
+from BulkSmsApi.Parse import Parse
 
 class Client:
     """
@@ -12,6 +13,7 @@ class Client:
     __BULKSMS_WEBSERVICE_URL = "http://portal.bulksmsweb.com/index.php?app=ws"
     __SEND_SMS_OPERATION     = "pv"
     __SMS_CREDIT_OPERATION   = "cr"
+    __STATUS_ERROR           = "ERR"
     
     def __init__(self, username=None, token=None):
         self.username = username
@@ -21,7 +23,7 @@ class Client:
     def __txt_op(self):
         # return url with username and token for text operation only
         if self.username and self.token:
-            txt_op_details = "&u={user}&={key}&op={operation}".format(
+            txt_op_details = "&u={user}&h={key}&op={operation}".format(
                 user=self.username,
                 key=self.token, 
                 operation=self.__SEND_SMS_OPERATION)
@@ -69,28 +71,29 @@ class Client:
 
     def __api_errors(self, error_response):
         # handle bulksmszw api error
-        if error_response.get("error_string") == None:
-            return False
-        elif len(error_response.get("error_string")) > 5:
+
+        if error_response.get("status") == self.__STATUS_ERROR:
+            # if status is in root node, and is has value 'ERR', there have been an exception
             return True
 
+        elif error_response.get("data"):
+            # 'data' values signifies text has been send correctly
+            return False
+
     def send_request(self, text, to, operation):
-        payload = dict()
-        payload["to"] = to
-        payload["msg"] = text
+        url = Parse(operation, text, to).url()
 
-        req = requests.post(operation, data=payload)
+        req = requests.post(url)
+        
+        # check for error
+        req.raise_for_status()
 
-        try:
-            req.raise_for_status()
-            response = req.json()
-            if self.__api_errors(error_response=response):
-                raise Exception(response)
-            
-            return response
-
-        except Exception as error:
-            return error
+        response = req.json()
+        
+        if self.__api_errors(error_response=response):
+            raise Exception(response)
+ 
+        return response
 
     def send(self, body, recipients, credits=False, schedule=None):
         #TODO: Handle scheduling text message: YYYY-MM-DD hh:mm:ss
