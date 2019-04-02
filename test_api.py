@@ -1,19 +1,18 @@
 # testing the api
-
-from BulkSmsApi import Client
+from BulkSmsApi.Client import Client
 
 BULKSMS_NAME   = "<your-username>"
 BULKSMSWEB_KEY = "<webservice-token>"
 
 # provide credentials here
-bulksms = Client(username=BULKSMS_NAME, token=BULKSMSWEB_KEY)
+bulksms         = Client(username=BULKSMS_NAME, token=BULKSMSWEB_KEY)
 
-# try sending
+message         = "Bulksms api test successful"
+phone_numbers   = ['2637xxxxxxxx', '2637yyyyyyyy', '#devteam']
+
 try:
-    # set "credit" flag = True so as to get text sms left on your web portal
-    print("Sending..")
-    resp = bulksms.send(body="hello world. Api test run", recipients=['2637xxxxxxxx'], credits=True)
+    resp = bulksms.send(message, phone_numbers)
     print(resp)
 
 except Exception as exc:
-    print("Error: %s" % exc)
+    print("Encountered an Error: %s" %exc)
