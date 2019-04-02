@@ -50,7 +50,6 @@ class Client:
         else:
             raise Exception("Username or Token not provided")
 
-
     def recipients(self, recipients_list):
         '''
             receive phone numbers as a list
