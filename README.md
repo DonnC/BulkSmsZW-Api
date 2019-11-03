@@ -14,7 +14,7 @@ $ python setup.py install
 
 - or directly with pip, ```python3.x``` 
 ```bash
-$ pip install --upgrade git+git://github.com/DonnC/BulkSmsZW-Api.git
+$ pip install bulksmszw
 ```
 ![demo gif](Docs/pip_install_only.gif)
 
