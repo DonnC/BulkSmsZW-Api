@@ -15,7 +15,7 @@ setuptools.setup(
     description="send text messages with bulksmszw api",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/DonnC/BulkSms-ZW",
+    url="https://github.com/DonnC/BulkSmsZW-Api",
     licence="MIT",
     install_requires=REQUIRED,
     packages=setuptools.find_packages(),
