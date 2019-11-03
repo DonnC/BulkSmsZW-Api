@@ -1,5 +1,6 @@
 # [BulkSmsZW-Api](http://www.bulksmsweb.com/)
-- bulksmszw api for sending affordable text messages
+- bulksmszw api for sending affordable text messages in Python
+- for Embedded device supported library in C++ for ESP8266-Arduino boards for IoT check out the ported library [bulksms ESP8266](https://github.com/DonnC/BulkSMSZW-ESP8266) 
 
 # Installation
 - make sure git is installed on your system or download repo as zip
