@@ -3,8 +3,12 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+REQUIRED = [
+    'requests'
+]
+
 setuptools.setup(
-    name="bulksms-donald",
+    name="bulksms",
     version="1.2.0",
     author="Donald Chinhuru",
     author_email="donychinhuru@gmail.com",
@@ -13,6 +17,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/DonnC/BulkSms-ZW",
     licence="MIT",
+    install_requires=REQUIRED,
     packages=setuptools.find_packages(),
     classifiers=[
         "License :: OSI Approved :: MIT License",
