@@ -8,7 +8,7 @@ REQUIRED = [
 ]
 
 setuptools.setup(
-    name="bulksms",
+    name="bulksmszw",
     version="1.2.0",
     author="Donald Chinhuru",
     author_email="donychinhuru@gmail.com",
