@@ -16,7 +16,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/DonnC/BulkSmsZW-Api",
-    licence="MIT",
+    license="MIT",
     install_requires=REQUIRED,
     packages=setuptools.find_packages(),
     classifiers=[
