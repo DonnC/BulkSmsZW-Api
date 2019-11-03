@@ -9,7 +9,7 @@ REQUIRED = [
 
 setuptools.setup(
     name="bulksmszw",
-    version="1.2.0",
+    version="1.0.0",
     author="Donald Chinhuru",
     author_email="donychinhuru@gmail.com",
     description="send text messages with bulksmszw api",
