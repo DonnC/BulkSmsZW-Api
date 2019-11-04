@@ -14,7 +14,7 @@ $ python setup.py install
 
 - or directly with pip, ```python3.x``` 
 ```bash
-$ pip install bulksmszw
+$ pip install Bulksmsapi-zw
 ```
 ![demo gif](Docs/pip_install_only.gif)
 
