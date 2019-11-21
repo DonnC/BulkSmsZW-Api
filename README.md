@@ -1,20 +1,10 @@
 # [BulkSmsZW-Api](http://www.bulksmsweb.com/)
-- bulksmszw api for sending affordable text messages in Python
+- Unofficial bulksmszw api for sending affordable text messages in Python using zim bulksms getaway providers
 - for Embedded device supported library in C++ for ESP8266-Arduino boards for IoT check out the ported library [bulksms ESP8266](https://github.com/DonnC/BulkSMSZW-ESP8266) 
 
 # Installation
-- make sure git is installed on your system or download repo as zip
-- In **cmd** or **terminal** do
-
 ```bash
-$ git clone https://github.com/DonnC/BulkSmsZW-Api.git
-$ cd BulkSmsZW-Api
-$ python setup.py install
-```
-
-- or directly with pip, ```python3.x``` 
-```bash
-$ pip install Bulksmsapi-zw
+$ pip install bulksmsapi-zw
 ```
 ![demo gif](Docs/pip_install_only.gif)
 
@@ -81,12 +71,11 @@ except Exception as exc:
 - responses are in default **JSON** format used by BulkSMSZW service
 
 ## acknowledgements
-- Big shoutout to the BulkSMS ZW team
+- the BulkSMS ZW team
 - Original bulksms [python api script](http://portal.bulksmsweb.com/sample/samplepy.html)
-- All credits to the Bulk SMS ZW Team
 
 ## HTTP API
-- api docs [HTTP API INTEGRATION DOC](http://portal.bulksmsweb.com/downloads/BulkSMS-API.pdf)
+- api docs for bulksmsweb [HTTP API INTEGRATION DOC](http://portal.bulksmsweb.com/downloads/BulkSMS-API.pdf)
 
 ## [TODO]()
 - Schedule messages
