@@ -1,5 +1,6 @@
 # [BulkSmsZW-Api](http://www.bulksmsweb.com/)
 - Unofficial bulksmszw api for sending affordable text messages in Python using zim bulksms getaway providers
+- Flutter dart package available here on [pub.dev/bulksmszw](https://pub.dev/packages/bulksmszw)
 - for Embedded device supported library in C++ for ESP8266-Arduino boards for IoT check out the ported library [bulksms ESP8266](https://github.com/DonnC/BulkSMSZW-ESP8266) 
 
 # Installation
